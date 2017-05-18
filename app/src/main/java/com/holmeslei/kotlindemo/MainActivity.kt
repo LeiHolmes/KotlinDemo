@@ -9,6 +9,11 @@ class MainActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         defineValue()
+        printsSum(1, 2)
+        Log.e("test_kotlin", "42和5大的数是：" + maxOf(42, 5))
+        printProduct("4", "5")
+        printProduct("3", "b")
+        printProduct("a", "2")
     }
 
     /**
@@ -25,7 +30,6 @@ class MainActivity : Activity() {
         var x = 5
         x += 1
 
-        Log.e("defineValue", "求和:" + sum(a, b))
     }
 
     /**
@@ -42,11 +46,11 @@ class MainActivity : Activity() {
      * 无返回值Unit,可省略
      */
     fun printsSum(a: Int, b: Int): Unit {
-        print(a + b)
+        Log.e("test_kotlin", "求和:" + sum(a, b))
     }
 
     //简写
-    fun printsSum1(a: Int, b: Int) = print(a + b)
+    fun printsSum1(a: Int, b: Int) = Log.e("test_kotlin", "求和:" + sum(a, b))
 
     /**
      * 比较，返回大值
@@ -61,4 +65,27 @@ class MainActivity : Activity() {
 
     //简写
     fun maxOf1(a: Int, b: Int) = if (a > b) a else b
+
+    //返回可空值
+    fun parseInt(str: String): Int? {
+        return str.toIntOrNull()
+    }
+
+    /**
+     * Kotlin对可空值必须进行判断
+     */
+    fun printProduct(arg1: String, arg2: String) {
+        val x = parseInt(arg1)
+        val y = parseInt(arg2)
+
+        // 直接使用 x*y 会报错因为它们中有可能会有空值
+        if (x != null && y != null) {
+            // x 和 y 将会在空值检测后自动转换为非空值
+            Log.e("test_kotlin", "printProduct:" + x * y)
+        } else {
+            Log.e("test_kotlin", "printProduct: $arg1 or $arg2 is not a number")
+        }
+    }
+    
+    
 }
