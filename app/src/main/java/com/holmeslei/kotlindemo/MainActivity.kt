@@ -20,7 +20,12 @@ class MainActivity : Activity() {
 
         useCircleFor()
         useCircleWhile()
-        
+
+        whenExpress(1)
+        whenExpress("hello")
+        whenExpress(518L)
+        whenExpress(10086)
+        whenExpress("xulei")
     }
 
     /**
@@ -130,4 +135,17 @@ class MainActivity : Activity() {
             index++
         }
     }
+
+    /**
+     * when表达式
+     * 类似Java的Switch
+     */
+    fun whenExpress(obj: Any): String =
+            when (obj) {
+                1 -> "one"
+                "hello" -> "is hello"
+                is Long -> "is Long"
+                !is String -> "is String"
+                else -> "UnKnown"
+            }
 }
