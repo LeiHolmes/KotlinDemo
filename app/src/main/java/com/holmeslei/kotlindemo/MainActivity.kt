@@ -17,6 +17,10 @@ class MainActivity : Activity() {
         printProduct("a", "2")
 
         Log.e("test_kotlin", "值检查:" + getStringLength("xulei"))
+
+        useCircleFor()
+        useCircleWhile()
+        
     }
 
     /**
@@ -101,5 +105,29 @@ class MainActivity : Activity() {
         }
         return null
     }
-    
+
+    /**
+     * for循环
+     */
+    fun useCircleFor() {
+        val items = listOf("monkey", "dog", "cat")
+        for (item in items) {
+            Log.e("test_kotlin", "for循环:" + item)
+        }
+//        for (index in items.indices) {
+//            Log.e("test_kotlin", "循环:" + items[index])
+//        }
+    }
+
+    /**
+     * while循环
+     */
+    fun useCircleWhile() {
+        val items = listOf("monkey", "dog", "cat")
+        var index = 0
+        while (index < items.size) {
+            Log.e("test_kotlin", "while循环:" + items[index])
+            index++
+        }
+    }
 }
