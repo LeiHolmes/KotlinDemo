@@ -11,9 +11,12 @@ class MainActivity : Activity() {
         defineValue()
         printsSum(1, 2)
         Log.e("test_kotlin", "42和5大的数是：" + maxOf(42, 5))
+
         printProduct("4", "5")
         printProduct("3", "b")
         printProduct("a", "2")
+
+        Log.e("test_kotlin", "值检查:" + getStringLength("xulei"))
     }
 
     /**
@@ -86,6 +89,17 @@ class MainActivity : Activity() {
             Log.e("test_kotlin", "printProduct: $arg1 or $arg2 is not a number")
         }
     }
-    
+
+    /**
+     * is 值检查并自动转换
+     * 相当于Java的 Instance of
+     */
+    fun getStringLength(obj: Any): Int? {
+        if (obj is String) {
+            // obj将会在这个if中自动转换为String类型
+            return obj.length
+        }
+        return null
+    }
     
 }
