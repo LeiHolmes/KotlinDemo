@@ -26,6 +26,8 @@ class MainActivity : Activity() {
         whenExpress(518L)
         whenExpress(10086)
         whenExpress("xulei")
+
+        rangeExpress()
     }
 
     /**
@@ -93,9 +95,9 @@ class MainActivity : Activity() {
         // 直接使用 x*y 会报错因为它们中有可能会有空值
         if (x != null && y != null) {
             // x 和 y 将会在空值检测后自动转换为非空值
-            Log.e("test_kotlin", "printProduct:" + x * y)
+            Log.e("test_kotlin", "可空值判断:" + x * y)
         } else {
-            Log.e("test_kotlin", "printProduct: $arg1 or $arg2 is not a number")
+            Log.e("test_kotlin", "可空值判断: $arg1 or $arg2 is not a number")
         }
     }
 
@@ -142,10 +144,24 @@ class MainActivity : Activity() {
      */
     fun whenExpress(obj: Any): String =
             when (obj) {
-                1 -> "one"
-                "hello" -> "is hello"
-                is Long -> "is Long"
-                !is String -> "is String"
-                else -> "UnKnown"
+                1 -> "when表达式:one"
+                "hello" -> "when表达式:is hello"
+                is Long -> "when表达式:is Long"
+                !is String -> "when表达式:is String"
+                else -> "when表达式:UnKnown"
             }
+
+    /**
+     * range表达式
+     */
+    fun rangeExpress() {
+        //in操作符检查数值是否在某个范围内
+        val x = 12
+        val y = 9
+        if (x in 1..y + 2) {
+            Log.e("test_kotlin", "range表达式:" + x + "在范围1-" + (y + 2) + "内")
+        }else {
+            Log.e("test_kotlin", "range表达式:" + x + "不在范围1-" + (y + 2) + "内")
+        }
+    }
 }
