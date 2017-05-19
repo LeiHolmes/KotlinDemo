@@ -28,6 +28,8 @@ class MainActivity : Activity() {
         whenExpress("xulei")
 
         rangeExpress()
+
+        useCollection()
     }
 
     /**
@@ -174,18 +176,41 @@ class MainActivity : Activity() {
         if (list.size !in list.indices) {//list.indices:0..2
             Log.e("test_kotlin", "range在范围外:" + list.size + "在范围" + list.indices + "外")
         }
-        
+
         //在范围内迭代
-        for(x in 1..5){
+        for (x in 1..5) {
             Log.e("test_kotlin", "range在范围内迭代:" + x)
         }
-        
+
         //步进
-        for(x in 1..10 step 2){
+        for (x in 1..10 step 2) {
             Log.e("test_kotlin", "range步进up:" + x)
         }
-        for(x in 9 downTo 0 step 3){
+        for (x in 9 downTo 0 step 3) {
             Log.e("test_kotlin", "range步进down:" + x)
         }
+    }
+
+    /**
+     * 集合
+     */
+    fun useCollection() {
+        //集合遍历
+        val animals = listOf("dog", "cat", "monkey")
+        for (item in animals) {
+            Log.e("test_kotlin", "集合:" + item)
+        }
+        //检测包含对象
+        val fruits = setOf("apple", "banana", "grape")
+        when {
+            "orange" in fruits -> Log.e("test_kotlin", "集合检测包含对象:有orange")
+            "apple" in fruits -> Log.e("test_kotlin", "集合检测包含对象:有apple")
+        }
+        //使用lambda表达式过滤和映射集合：
+        val tools = listOf("Wrench", "Wire", "Flashlight", "Interphone")
+        tools.filter { it.startsWith("W") }
+                .sortedBy { it }
+                .map { it.toUpperCase() }
+                .forEach { Log.e("test_kotlin", "集合Lambda表达式过滤" + it) }
     }
 }
