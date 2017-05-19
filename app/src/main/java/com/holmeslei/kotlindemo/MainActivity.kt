@@ -155,13 +155,37 @@ class MainActivity : Activity() {
      * range表达式
      */
     fun rangeExpress() {
-        //in操作符检查数值是否在某个范围内
+        //检查数值是否在某个范围内
         val x = 12
         val y = 9
         if (x in 1..y + 2) {
-            Log.e("test_kotlin", "range表达式:" + x + "在范围1-" + (y + 2) + "内")
-        }else {
-            Log.e("test_kotlin", "range表达式:" + x + "不在范围1-" + (y + 2) + "内")
+            Log.e("test_kotlin", "range在范围内:" + x + "在范围1-" + (y + 2) + "内")
+        } else {
+            Log.e("test_kotlin", "range在范围内:" + x + "不在范围1-" + (y + 2) + "内")
+        }
+
+        //检查数值是否在范围外
+        val list = listOf("a", "b", "c")
+        if (-2 !in 0..list.lastIndex) {
+            Log.e("test_kotlin", "range在范围外:-2在范围0-" + list.lastIndex + "外")
+        } else {
+            Log.e("test_kotlin", "range在范围外:-2不在范围0-" + list.lastIndex + "外")
+        }
+        if (list.size !in list.indices) {//list.indices:0..2
+            Log.e("test_kotlin", "range在范围外:" + list.size + "在范围" + list.indices + "外")
+        }
+        
+        //在范围内迭代
+        for(x in 1..5){
+            Log.e("test_kotlin", "range在范围内迭代:" + x)
+        }
+        
+        //步进
+        for(x in 1..10 step 2){
+            Log.e("test_kotlin", "range步进up:" + x)
+        }
+        for(x in 9 downTo 0 step 3){
+            Log.e("test_kotlin", "range步进down:" + x)
         }
     }
 }
