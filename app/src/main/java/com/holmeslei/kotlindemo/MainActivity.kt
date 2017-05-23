@@ -39,7 +39,7 @@ class MainActivity : Activity() {
         //定义常量
         val a: Int = 1
         val b = 1 //推导出Int型
-        val c: Int 
+        val c: Int
         c = 1 //必须声明完之后赋值
 
         //定义变量
@@ -212,5 +212,9 @@ class MainActivity : Activity() {
                 .sortedBy { it }
                 .map { it.toUpperCase() }
                 .forEach { Log.e("test_kotlin", "集合Lambda表达式过滤" + it) }
+    }
+
+    fun test() {
+        
     }
 }
