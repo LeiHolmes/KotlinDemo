@@ -215,6 +215,7 @@ class MainActivity : Activity() {
     }
 
     fun test() {
-        
+        Log.e("test_kotlin", "集合:")
+
     }
 }
