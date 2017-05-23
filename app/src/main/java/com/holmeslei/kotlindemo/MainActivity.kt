@@ -36,13 +36,13 @@ class MainActivity : Activity() {
      * 定义常量变量
      */
     fun defineValue() {
-        //常量
+        //定义常量
         val a: Int = 1
         val b = 1 //推导出Int型
-        val c: Int
-        c = 1
+        val c: Int 
+        c = 1 //必须声明完之后赋值
 
-        //变量
+        //定义变量
         var x = 5
         x += 1
 
