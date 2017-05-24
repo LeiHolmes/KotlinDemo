@@ -8,27 +8,34 @@ class MainActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //常量变量定义
         defineValue()
         printsSum(1, 2)
         Log.e("test_kotlin", "42和5大的数是：" + maxOf(42, 5))
 
+        //null检查
         printProduct("4", "5")
         printProduct("3", "b")
         printProduct("a", "2")
-
+        
+        //value检查，类型自动转换
         Log.e("test_kotlin", "值检查:" + getStringLength("xulei"))
 
+        //for while循环
         useCircleFor()
         useCircleWhile()
-
+        
+        //when表达式
         whenExpress(1)
         whenExpress("hello")
         whenExpress(518L)
         whenExpress(10086)
         whenExpress("xulei")
-
+        
+        //range表达式
         rangeExpress()
-
+        
+        //集合
         useCollection()
     }
 
@@ -212,10 +219,5 @@ class MainActivity : Activity() {
                 .sortedBy { it }
                 .map { it.toUpperCase() }
                 .forEach { Log.e("test_kotlin", "集合Lambda表达式过滤" + it) }
-    }
-
-    fun test() {
-        Log.e("test_kotlin", "集合:")
-
     }
 }
