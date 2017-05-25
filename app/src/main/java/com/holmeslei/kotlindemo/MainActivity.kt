@@ -51,9 +51,12 @@ class MainActivity : Activity() {
         val c: Int
         c = 1 //必须声明完之后赋值
 
+        //数值常量可添加下划线分割
         val oneMillion = 1_000_000
-        val idCard = 18860_1994_0318_4459 //数值常量可添加下划线分割
+        val idCard = 18860_1994_0318_4459
 
+        //常量数组
+        val arrs = Array(3) { Array(2) { IntArray(1) } } //java: int[][][] arrs = new int[3][2][1];
 
         //定义变量
         var x = 5
@@ -156,7 +159,7 @@ class MainActivity : Activity() {
 
     /**
      * when表达式
-     * 类似Java的Switch
+     * 替换Java的Switch
      */
     fun whenExpress(obj: Any): String =
             when (obj) {
@@ -164,6 +167,7 @@ class MainActivity : Activity() {
                 "hello" -> "when表达式:is hello"
                 is Long -> "when表达式:is Long"
                 !is String -> "when表达式:is String"
+                if (obj is Int) 5 else -6 -> "when表达式:is Int"
                 else -> "when表达式:UnKnown"
             }
 
