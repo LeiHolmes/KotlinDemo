@@ -17,24 +17,24 @@ class MainActivity : Activity() {
         printProduct("4", "5")
         printProduct("3", "b")
         printProduct("a", "2")
-        
+
         //value检查，类型自动转换
         Log.e("test_kotlin", "值检查:" + getStringLength("xulei"))
 
         //for while循环
         useCircleFor()
         useCircleWhile()
-        
+
         //when表达式
         whenExpress(1)
         whenExpress("hello")
         whenExpress(518L)
         whenExpress(10086)
         whenExpress("xulei")
-        
+
         //range表达式
         rangeExpress()
-        
+
         //集合
         useCollection()
     }
@@ -43,16 +43,23 @@ class MainActivity : Activity() {
      * 定义常量变量
      */
     fun defineValue() {
+        //数值类型：Double Float Long Int Short Byte
+
         //定义常量
         val a: Int = 1
         val b = 1 //推导出Int型
         val c: Int
         c = 1 //必须声明完之后赋值
 
+        val oneMillion = 1_000_000
+        val idCard = 18860_1994_0318_4459 //数值常量可添加下划线分割
+
+
         //定义变量
         var x = 5
         x += 1
-
+        var name: String? = "xulei" //变量名后加"?"代表为可空变量
+        name = null //只有可空变量才可赋值为null
     }
 
     /**
