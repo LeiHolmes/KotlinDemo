@@ -142,7 +142,7 @@ class MainActivity : Activity() {
         }
 //        for (index in items.indices) {
 //            Log.e("test_kotlin", "循环:" + items[index])
-//        }
+//        } 
     }
 
     /**
