@@ -31,6 +31,13 @@ class MainActivity : Activity() {
         whenExpress(518L)
         whenExpress(10086)
         whenExpress("xulei")
+        whenExpress1(0)
+        whenExpress1(-1)
+        whenExpress1(1)
+        whenExpress1(2)
+        whenExpress1(3)
+        whenExpress1(6)
+        whenExpress1(10)
 
         //range表达式
         rangeExpress()
@@ -170,6 +177,25 @@ class MainActivity : Activity() {
                 if (obj is Int) 5 else -6 -> "when表达式:is Int"
                 else -> "when表达式:UnKnown"
             }
+
+    fun whenExpress1(x: Int) {
+        when (x) {
+            2 -> println("等于2")
+        //数值表达式
+            if (x > 0) 1 else -1 -> Log.e("test_kotlin", "when表达式1:大于0并等于1，或小于0并等于-1")
+        //Boolean类型表达式
+            in 1..5 -> Log.e("test_kotlin", "when表达式1:范围匹配1-5")
+            !in 6..9 -> Log.e("test_kotlin", "when表达式1:不是6-9")
+            is Int -> Log.e("test_kotlin", "when表达式1:类型判断")
+            else -> Log.e("test_kotlin", "when表达式1:else")
+        }
+        // 代替if...else if
+        when {
+            x > 6 && x <= 10 -> Log.e("test_kotlin", "when表达式1:大于6小于等于10")
+            x < 6 -> Log.e("test_kotlin", "when表达式代替if:小于6")
+            else -> Log.e("test_kotlin", "when表达式代替if:小于6")
+        }
+    }
 
     /**
      * range表达式
