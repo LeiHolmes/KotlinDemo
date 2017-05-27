@@ -255,6 +255,6 @@ class MainActivity : Activity() {
         tools.filter { it.startsWith("W") }
                 .sortedBy { it }
                 .map { it.toUpperCase() }
-                .forEach { Log.e("test_kotlin", "集合Lambda表达式过滤" + it) }
+                .forEach { Log.e("test_kotlin", "集合Lambda表达式过滤" + it) } 
     }
 }
